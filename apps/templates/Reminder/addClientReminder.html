@@ -1,0 +1,65 @@
+{% extends 'layouts/base2.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="container mt--10 pb-5">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+
+            <div class="card bg-secondary shadow border-0">
+                <div class="card-header bg-transparent pb-5">
+                    <div class="card-body px-lg-5 py-lg-5">
+                        <div class="text-center text-muted mb-4">
+                            <h3>Reminders </h3>
+
+                            <form action="" method="POST">
+
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text "><i class="ni ni-email-83"></i></span>
+                                        </div>
+                                        {{ form.Reminder_date}}
+                                    </div>
+                                </div>
+                                <span class="text-error">{{ form.Reminder_date.errors }}</span>
+
+                         <div class="form-group">
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                        </div>
+                                        {{ form.Reminder_description }}
+                                    </div>
+                                </div>
+                                <span class="text-error">{{ form.Reminder_description.errors }}</span>
+
+
+                                {% csrf_token %}
+
+                                <input type="submit" class="btn btn-primary mt-4" value = "submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+
+<script src="/static/assets/vendor/chart.js/dist/Chart.min.js"></script>
+<script src="/static/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+
+{% endblock javascripts %}

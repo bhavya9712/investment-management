@@ -1,0 +1,82 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+                    <h6 class="h2 text-white d-inline-block mb-0">View Family Members</h6>
+
+          </div>
+            <div class="col-lg-6 col-5 text-right">
+
+
+            <a href="{% url 'addfamily' %}" class="btn btn-sm btn-neutral">New family member</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col">
+      <div class="card bg-default shadow">
+
+        <div class="table-responsive">
+          <table class="table align-items-center table-dark table-flush" border="1">
+
+            <thead class="thead-dark">
+             <tr>
+                <th scope="col" class="sort" data-sort="name">Sr. No. </th>
+                <th scope="col" class="sort" data-sort="name">User Name  </th>
+                 <th scope="col" class="sort" data-sort="budget">Email </th>
+<!--                <th scope="col" class="sort" data-sort="status">investment description</th>-->
+<!--                <th scope="col">investment date</th>-->
+<!--                <th scope="col" class="sort" data-sort="completion">due/renew date</th>-->
+<!--                 <th scope="col" class="sort" data-sort="completion">update</th>-->
+<!--                 <th scope="col" class="sort" data-sort="completion">remove</th>-->
+
+              </tr></thead>
+            <tbody>
+        {% for client in clients.all %}
+        <tr>
+           <td><strong>{{ forloop.counter }} </strong></td>
+           <td><strong>{{ client.username }}</strong></td>
+           <td><strong>{{ client.email }}</strong></td>
+            <td><a href="{% url 'familyinvestments' client.id %}" class="btn btn-sm btn-neutral">view investment</a></td>
+            <td><a href="{% url 'familyreminder' client.id %}" class="btn btn-sm btn-neutral">view reminder</a></td>
+            <!--           <td><strong>{{ reminder.investment_date }}</strong></td>-->
+<!--           <td><strong>{{ reminder.investment_date }}</strong></td>-->
+<!--           <td><strong>{{ reminder.investment_due_date }}</strong></td>-->
+ </tr>
+        {% endfor %}
+       </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+
+  <script src="/static/assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/static/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+
+{% endblock javascripts %}

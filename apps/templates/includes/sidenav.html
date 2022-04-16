@@ -1,0 +1,41 @@
+<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+  <div class="scrollbar-inner">
+    <!-- Brand -->
+    <div class="sidenav-header  align-items-center">
+       <b><span  style="color:#5e72e4;" class="nav-link-text">Investments Management System</span>
+     </b>
+    </div>
+    <div class="navbar-inner">
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+        <!-- Nav items -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link {% if 'icons' in segment %} active {% endif %}" href="{% url 'invest' %}">
+              <i class="ni ni-planet text-orange"></i>
+              <span class="nav-link-text">My Investments</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'icons' in segment %} active {% endif %}" href="{% url 'reminders'%}">
+              <i class="ni ni-planet text-orange"></i>
+              <span class="nav-link-text">My Reminder</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'profile' in segment %} active {% endif %}" href="{% url 'profile'%}">
+              <i class="ni ni-single-02 text-yellow"></i>
+              <span class="nav-link-text">Profile</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'profile' in segment %} active {% endif %}" href="{% url 'viewfamily'%}">
+              <i class="ni ni-single-02 text-yellow"></i>
+              <span class="nav-link-text">Family</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

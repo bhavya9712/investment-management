@@ -1,0 +1,39 @@
+<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+  <div class="scrollbar-inner">
+    <!-- Brand -->
+    <div class="sidenav-header  align-items-center">
+      <b> <span  style="color:#5e72e4;" class="nav-link-text">Investments Management System</span>
+      </b>
+    </div>
+    <div class="navbar-inner">
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+        <!-- Nav items -->
+        <ul class="navbar-nav">
+
+
+          <li class="nav-item">
+            <a class="nav-link {% if 'tables' in segment %} active {% endif %}"href="{% url 'add_agent_detail'%}">
+
+               <i class="ni ni-single-02 text-yellow"></i>
+              <span class="nav-link-text">Agent Details</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'profile' in segment %} active {% endif %}" href="{% url 'clients'%}">
+              <i class="ni ni-bullet-list-67 text-default"></i>
+              <span class="nav-link-text">View Clients</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'profile' in segment %} active {% endif %}" href="{% url 'agentprofile'%}">
+               <i class="ni ni-single-02 text-yellow"></i>
+              <span class="nav-link-text">Profile</span>
+            </a>
+          </li>
+        </ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,106 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="container mt--10 pb-5">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+        
+          <div class="card bg-secondary shadow border-0">
+            <div class="card-header bg-transparent pb-5">
+                <div class="card-body px-lg-5 py-lg-5">
+                    <div class="text-center text-muted mb-4">
+    <h3>investment </h3>
+
+<form action="" method="POST">
+
+        {% csrf_token %}
+  
+        <div class="form-group">
+          <div class="input-group input-group-alternative mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+            </div>
+            {{ form.investmenttype }}
+          </div>
+        </div>
+        <span class="text-error">{{ form.investmenttype.errors }}</span>
+
+
+
+        <div class="form-group">
+            <div class="input-group input-group-alternative mb-3">
+              <div class="input-group-prepend ">
+                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+              </div>
+              {{ form.investment_amount }}
+            </div>
+          </div>
+          <span class="text-error">{{ form.investment_amount.errors }}</span>
+
+          <div class="form-group">
+            <div class="input-group input-group-alternative mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+              </div>
+              {{ form.investmentcompany }}
+            </div>
+          </div>
+          <span class="text-error">{{ form.investmentcompany.errors }}</span>
+
+          <div class="form-group">
+            <div class="input-group input-group-alternative mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text "><i class="ni ni-email-83"></i></span>
+              </div>
+              <input type="date" class="form-control datepicker" name="investment_date" firstday="1"  lang="pl" format="yyyy-mm-dd" required="" id="id_investment_date">
+            </div>
+          </div>
+          <span class="text-error">{{ form.investment_date.errors }}</span>
+
+          <div class="form-group">
+            <div class="input-group input-group-alternative mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+              </div>
+              <input type="date" class="form-control datepicker" name="investment_due_date" firstday="1" pattern="=&quot;\d{4}-\d{2}-\d{2}&quot;" lang="pl" format="yyyy-mm-dd" autoclose="" required="" id="id_investment_due_date">
+            </div>
+          </div>
+          <span class="text-error">{{ form.investment_due_date.errors }}</span>
+
+          <div class="form-group">
+            <div class="input-group input-group-alternative mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+              </div>
+              <textarea name="investment_description" cols="40" rows="4" placeholder="Investment Description" class="form-control" required="" id="id_investment_description"></textarea>
+            </div>
+          </div>
+          <span class="text-error">{{ form.investment_description.errors }}</span>
+
+    {% csrf_token %}
+   
+    <input type="submit" class="btn btn-primary mt-4" value = "submit">
+</form>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+
+  <script src="/static/assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/static/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+
+{% endblock javascripts %}
