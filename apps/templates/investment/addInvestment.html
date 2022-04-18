@@ -23,7 +23,7 @@
         {% csrf_token %}
   
         <div class="form-group">
-          <div class="input-group input-group-alternative mb-3">
+          <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="ni ni-paper-diploma"></i></span>
             </div>
@@ -35,7 +35,7 @@
 
 
         <div class="form-group">
-            <div class="input-group input-group-alternative mb-3">
+            <div class="input-group ">
               <div class="input-group-prepend ">
                 <span class="input-group-text"><i class="ni ni-money-coins"></i></span>
               </div>
@@ -45,7 +45,7 @@
           <span class="text-error">{{ form.investment_amount.errors }}</span>
 
           <div class="form-group">
-            <div class="input-group input-group-alternative mb-3">
+            <div class="input-group ">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="ni ni-building"></i></span>
               </div>
@@ -54,20 +54,23 @@
           </div>
           <span class="text-error">{{ form.investmentcompany.errors }}</span>
 
-          <div class="form-group">
-            <div class="input-group input-group-alternative mb-3">
-              <div class="input-group-prepend">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
                 <span class="input-group-text "><i class="ni ni-calendar-grid-58"></i></span>
               </div>
-{{ form.investment_date }}          </div>
+                    {{ form.investment_date }}
+            </div>
+    </div>
           <span class="text-error">{{ form.investment_date.errors }}</span>
 
           <div class="form-group">
-            <div class="input-group input-group-alternative mb-3">
+            <div class="input-group ">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
               </div>
-{{ form.investment_due_date }}            </div>
+                    {{ form.investment_due_date }}
+            </div>
           </div>
           <span class="text-error">{{ form.investment_due_date.errors }}</span>
 

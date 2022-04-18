@@ -21,7 +21,7 @@
 
           </div>
             <div class="col-lg-6 col-5 text-right">
-c<a class="btn btn-sm btn-neutral" href="{% url 'venue_pdf' %}">Generate PDF File</a>
+<a class="btn btn-sm btn-neutral" href="{% url 'venue_pdf' %}">Generate PDF File</a>
 </i>                <a href="{% url 'addInvestForm' %}" class="btn btn-sm btn-neutral">New investment</a>
           </div>
         </div>
@@ -90,7 +90,7 @@ c<a class="btn btn-sm btn-neutral" href="{% url 'venue_pdf' %}">Generate PDF Fil
 
 
 <div class="pagination">
-    <span class="step-links">
+        <span class="step-links">
         {% if investments.has_previous %}
             <a href="?page=1">&laquo; first</a>
             <a href="?page={{ investments.previous_page_number }}">previous</a>

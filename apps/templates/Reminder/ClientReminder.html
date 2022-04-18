@@ -58,6 +58,7 @@
            <td><strong>{{ reminder.Reminder_Investment_id.investment_due_date }}</strong></td>
             <td><strong><a class="btn btn-sm btn-info" href="{% url 'updateClientReminderForm' reminder.Reminder_id %}">update</a></strong></td>
             <td><strong><a class="btn btn-sm btn-danger"  href="{% url 'agentdeleteReminder' reminder.Reminder_id %}">delete</a></strong></td>
+
           </tr>
         {% endfor %}
         </tbody>

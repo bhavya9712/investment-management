@@ -58,8 +58,17 @@
            <td><strong>{{ reminder.Reminder_Investment_id.investment_description }}</strong></td>
            <td><strong>{{ reminder.Reminder_Investment_id.investment_date }}</strong></td>
            <td><strong>{{ reminder.Reminder_Investment_id.investment_due_date }}</strong></td>
-            <td><strong><a class="btn btn-sm btn-info" href="{% url 'updateReminderForm' reminder.Reminder_id %}">update</a></strong></td>
+             {% if reminder.Reminder_Investment_id.investment_agent_id != '' %}
+             <td></td>
+            <td></td>
+             {% else %}
+          <td><strong><a class="btn btn-sm btn-info" href="{% url 'updateReminderForm' reminder.Reminder_id %}">update</a></strong></td>
             <td><strong><a class="btn btn-sm btn-danger"  href="{% url 'deleteReminder' reminder.Reminder_id %}">delete</a></strong></td>
+
+            {% endif %}
+
+<!--            <td><strong><a class="btn btn-sm btn-info" href="{% url 'updateReminderForm' reminder.Reminder_id %}">update</a></strong></td>-->
+<!--            <td><strong><a class="btn btn-sm btn-danger"  href="{% url 'deleteReminder' reminder.Reminder_id %}">delete</a></strong></td>-->
           </tr>
         {% endfor %}
         </tbody>
