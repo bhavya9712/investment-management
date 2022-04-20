@@ -61,7 +61,8 @@
             <td><a href="{% url 'addclientInvestForm' client.id %}" class="btn btn-sm btn-neutral">New investment</a></td>
             <td><a href="{% url 'viewclientInvestment' client.id %}" class="btn btn-sm btn-neutral">view investment</a></td>
             <td><a href="{% url 'agentreminder' client.id %}" class="btn btn-sm btn-neutral">view reminder</a></td>
-            <td><a href="{% url 'investment_pdf' client.id %}" class="btn btn-sm btn-neutral">generate pdf</a></td>
+            <td>
+<a href="{% url 'investment_pdf' client.id %}" class="btn btn-sm btn-neutral"> <i class="ni ni-single-copy-04"></i> generate pdf</a></td>
             <!--           <td><strong>{{ reminder.investment_date }}</strong></td>-->
 <!--           <td><strong>{{ reminder.investment_date }}</strong></td>-->
 <!--           <td><strong>{{ reminder.investment_due_date }}</strong></td>-->

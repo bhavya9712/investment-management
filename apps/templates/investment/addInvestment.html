@@ -23,9 +23,9 @@
         {% csrf_token %}
   
         <div class="form-group">
-          <div class="input-group input-group-alternative mb-3">
+          <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+              <span class="input-group-text"><i class="ni ni-paper-diploma"></i></span>
             </div>
             {{ form.investmenttype }}
           </div>
@@ -35,9 +35,9 @@
 
 
         <div class="form-group">
-            <div class="input-group input-group-alternative mb-3">
+            <div class="input-group ">
               <div class="input-group-prepend ">
-                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                <span class="input-group-text"><i class="ni ni-money-coins"></i></span>
               </div>
               {{ form.investment_amount }}
             </div>
@@ -45,36 +45,38 @@
           <span class="text-error">{{ form.investment_amount.errors }}</span>
 
           <div class="form-group">
-            <div class="input-group input-group-alternative mb-3">
+            <div class="input-group ">
               <div class="input-group-prepend">
-                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                <span class="input-group-text"><i class="ni ni-building"></i></span>
               </div>
               {{ form.investmentcompany }}
             </div>
           </div>
           <span class="text-error">{{ form.investmentcompany.errors }}</span>
 
-          <div class="form-group">
-            <div class="input-group input-group-alternative mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text "><i class="ni ni-email-83"></i></span>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text "><i class="ni ni-calendar-grid-58"></i></span>
               </div>
-{{ form.investment_date }}          </div>
+                    {{ form.investment_date }}
+            </div>
+    </div>
           <span class="text-error">{{ form.investment_date.errors }}</span>
 
           <div class="form-group">
-            <div class="input-group input-group-alternative mb-3">
+            <div class="input-group ">
               <div class="input-group-prepend">
-                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
               </div>
-{{ form.investment_due_date }}            </div>
+                    {{ form.investment_due_date }}
+            </div>
           </div>
           <span class="text-error">{{ form.investment_due_date.errors }}</span>
 
           <div class="form-group">
             <div class="input-group input-group-alternative mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
               </div>
 {{ form.investment_description }}            </div>
           </div>

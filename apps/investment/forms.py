@@ -31,7 +31,10 @@ class InvestmentForm(ModelForm):
         widget=forms.Textarea(
             attrs={
                 "placeholder": "Investment Description",
-                "class": "form-control"
+                "class": "form-control ","style":"resize: none",
+                "rows":"5",
+                "cols":"35"
+
             }
         ))
 
