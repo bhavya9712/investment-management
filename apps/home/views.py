@@ -4,6 +4,7 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from django import template
+from django.contrib import messages
 from django.contrib.auth import get_user
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
@@ -38,14 +39,18 @@ def view_family(request):
 
 
 def add_family(request):
+
+
     if request.method == 'POST':
         user_name = get_user(request)
+        try:
+            user_name.clients_family.add(CustomUser.objects.get(email=request.POST.get("clients_family")))
+            user_name.save()
 
-        user_name.clients_family.add(CustomUser.objects.get(email=request.POST.get("clients_family")))
-        user_name.save()
+            return redirect('/viewfamily')
+        except CustomUser.DoesNotExist:
+            messages.error(request,"email is not registered")
 
-
-        return redirect('/viewfamily')
 
     return render(request, "home/addfamily.html")
 
